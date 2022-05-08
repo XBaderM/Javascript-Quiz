@@ -30,3 +30,63 @@ a{
 a:hover {
     color: rgb(243, 12, 12);
 }
+
+.hide {
+    display: none;
+}
+
+
+/* Main content on centered white card */
+.main {
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    max-width: 75%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(231, 202, 12);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px 2px;
+}
+
+/* Button stylings, hover effect */
+.btn {
+    border: 3px solid hsl(200, 100%, 25%);
+    border-radius: 5px;
+    background-color: hsl(32, 91%, 51%);
+    padding: 15px 20px;
+    margin: 15px;
+    color: white;
+    font-size: large;
+    width: 90%;
+}
+
+.btn.submit-btn {
+    border-width: 2px;
+    padding: 5px;
+    font-size: medium;
+    width: fit-content;
+}
+
+.btn:hover {
+    background-color: hsl(83, 83%, 50%);
+}
+/* Correct answers revealed in green */
+.btn.correct {
+    background-color: hsl(120, 100%, 30%);
+    border-color: hsl(120, 100%, 20%);
+}
+/* Incorrect answers revealed in red */
+.btn.wrong {
+    background-color: hsl(0, 100%, 30%);
+    border-color: hsl(0, 100%, 20%);
+}
+
+/* smaller screen resolution */
+@media screen and (max-width: 576px) {
+    .btn {
+        width: 80%;
+        padding: 10px 15px;
+        margin: 5px 10px;
+    }
+}
