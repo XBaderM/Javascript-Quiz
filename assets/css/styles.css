@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    background-color: hsl(83, 76%, 44%);
+}
+/* Link to high scores & Timer aligned at header ends */
+.header {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    background-color: rgb(207, 222, 36);
+}
+a{
+    font-size: 20px;
+}
+/* Hover selector for high scores link */
+a:hover {
+    color: rgb(243, 12, 12);
+}
