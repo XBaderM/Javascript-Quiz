@@ -13,7 +13,7 @@ body {
     align-items: center;
     background-color: hsl(83, 76%, 44%);
 }
-/* Link to high scores & Timer aligned at header ends */
+/* Link to high scores & Timer */
 .header {
     width: 100%;
     padding: 20px;
@@ -26,7 +26,7 @@ body {
 a{
     font-size: 20px;
 }
-/* Hover selector for high scores link */
+
 a:hover {
     color: rgb(243, 12, 12);
 }
