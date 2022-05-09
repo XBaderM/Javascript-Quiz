@@ -98,6 +98,34 @@ function nextQuestion() {
     };
 };
 
+// When user clicks an answer button
+function handleAnswerClick(event) {
+   
+    let correctAnswer = getCorrectAnswer(currentQuestion);
+
+    if (event.target.textContent === correctAnswer) {
+        currentScore += 10;
+        event.target.classList.add('correct')
+    } else {
+        timer -= 10;
+        event.target.classList.add('wrong')
+    }
+    setTimeout(
+        () => {
+            event.target.className = 'btn';
+            nextQuestion();
+        }, 500);
+};
+
+function getCorrectAnswer(currentQuestion) {
+    let arr = questions[currentQuestion].answersArray;
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j].correct) { 
+            return arr[j].answer  
+        }
+    }
+};
+
 
         // function for changing divs to next
 function changeDiv(current, next) {
