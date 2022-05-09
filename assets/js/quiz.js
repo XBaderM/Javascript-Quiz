@@ -66,6 +66,11 @@ let finalScore;
 let currentQuestion = -1;
 let timer = 10*questions.length;
 
+function startGame() {
+    changeDiv('start-page', 'question-container');
+    nextQuestion();
+    startTimer();
+};
 
 
 // Timer function
@@ -157,9 +162,5 @@ function handleSubmit() {
     window.location.href = './highscores.html';
 }
 // start the quiz
-function startGame() {
-    changeDiv('start-page', 'question-container');
-    nextQuestion();
-    startTimer();
-};
+
 
