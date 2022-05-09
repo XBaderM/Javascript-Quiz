@@ -59,3 +59,55 @@ const questions = [
     }
 
 ];
+
+// global variables
+let currentScore = 0;
+let finalScore;
+let currentQuestion = -1;
+let timer = 10*questions.length;
+
+
+
+// Timer function
+function startTimer() {
+    timerEl.textContent = timer;
+    let timerInterval = setInterval(
+        () => {
+            timer--;
+            timerEl.textContent = timer;
+            if (timer <= 0) {
+                clearInterval(timerInterval);
+                endGame();
+            }
+        }, 1000);
+};
+
+function nextQuestion() {
+    currentQuestion++;
+    if (currentQuestion === questions.length) {
+        timer = 0;
+        endGame();
+    } else {
+        questionEl.textContent = questions[currentQuestion].question;
+        let arr = [answerOne, answerTwo, answerThree, answerFour];
+        let i = 0;
+        arr.forEach(element => {
+            element.textContent = questions[currentQuestion].answersArray[i].answer;
+            i++
+        }, i);
+    };
+};
+
+
+        // function for changing divs to next
+function changeDiv(current, next) {
+    document.getElementById(current).classList.add('hide');
+    document.getElementById(next).removeAttribute('class')
+};
+// start the quiz
+function startGame() {
+    changeDiv('start-page', 'question-container');
+    nextQuestion();
+    startTimer();
+};
+
