@@ -132,6 +132,30 @@ function changeDiv(current, next) {
     document.getElementById(current).classList.add('hide');
     document.getElementById(next).removeAttribute('class')
 };
+
+function endGame() {
+    timerEl.textContent = 0;
+    changeDiv('question-container', 'results-page');
+    finalScore = currentScore;
+    finalScoreEl.textContent = finalScore;
+}
+function handleSubmit() {
+    let initials = initialsEl.value;
+    let highScoresList = JSON.parse(localStorage.getItem('highScores')) || [];
+    highScoresList.push({ initials: initials, score: finalScore });
+    highScoresList = highScoresList.sort((curr, next) => {
+        if (curr.score < next.score) {
+            return true;
+        } else if (curr.score > next.score) {
+            return -1
+        } else {
+            return false;
+        }
+    });
+    // set updated array to local storage
+    localStorage.setItem('highScores', JSON.stringify(highScoresList))
+    window.location.href = './highscores.html';
+}
 // start the quiz
 function startGame() {
     changeDiv('start-page', 'question-container');
